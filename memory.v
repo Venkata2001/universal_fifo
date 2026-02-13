@@ -15,7 +15,7 @@ module memory#(
     );
     (* ram_style = "block" *)
     reg [DATA_WIDTH-1:0]bram[MEM_DEPTH-1:0];
-//    reg[DATA_WIDTH-1:0]rd_data_r;
+    
     always@(posedge wr_clk)begin
         if(wr_en_i)begin
             bram[wr_addr_i] <= wr_data_i;
@@ -28,7 +28,4 @@ module memory#(
         end
     end
     
-//    always@(posedge rd_clk)begin
-//        rd_data_o  <= rd_data_r;
-//    end
 endmodule
